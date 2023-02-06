@@ -49,8 +49,8 @@ const colors = {
   bgWhiteBright: 107,
 };
 
-const kulay = function (text: string): string {
-  const result = `${kulay.c}${text}\x1b[0m`;
+const kulay = function (...text: string[]): string {
+  const result = `${kulay.c}${text.join("")}\x1b[0m`;
   kulay.c = "";
   return result;
 };
@@ -59,7 +59,7 @@ kulay.c = "";
 // https://stackoverflow.com/questions/68387483/how-does-nodejs-module-chalks-chaining-syntax-work
 for (const [key, value] of Object.entries(colors)) {
   Object.defineProperty(kulay, key, {
-    get: function () {
+    get() {
       // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
       this.c += `\x1b[${value}m`;
       return this;
