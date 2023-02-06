@@ -15,7 +15,9 @@ await writeFile(
 // Copy over the types
 await writeFile(
   "./dist/index.d.ts",
-  await readFile("./src/types/index.d.ts", "utf-8")
+  (
+    await readFile("./src/types/index.d.ts", "utf-8")
+  ).replaceAll(/(\r\n|\n|\r)/gm, "")
 );
 
 // Copy the README file over.
