@@ -75,6 +75,7 @@ for (const [key, value] of Object.entries(colors)) {
       this.c += isColorSupported ? `\x1b[${value}m` : "";
       return kulay;
     },
+    enumerable: true,
   });
 }
 
