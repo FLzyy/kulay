@@ -56,9 +56,6 @@ const kulay = function (text: string): string {
 };
 kulay.c = "";
 
-const apply = (text: string, ...styles: Array<keyof typeof colors>): string =>
-  `${styles.map((value) => `\x1b[${colors[value]}m`).join("")}${text}\x1b[0m`;
-
 // https://stackoverflow.com/questions/68387483/how-does-nodejs-module-chalks-chaining-syntax-work
 for (const [key, value] of Object.entries(colors)) {
   Object.defineProperty(kulay, key, {
@@ -69,6 +66,9 @@ for (const [key, value] of Object.entries(colors)) {
     },
   });
 }
+
+const apply = (text: string, ...styles: Array<keyof typeof colors>): string =>
+  `${styles.map((value) => `\x1b[${colors[value]}m`).join("")}${text}\x1b[0m`;
 
 export default kulay;
 export { colors, kulay, apply };
