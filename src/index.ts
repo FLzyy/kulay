@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 import { isatty } from "tty";
 
@@ -155,9 +156,13 @@ const isColorSupported =
     "CI" in process.env);
 
 const kulay = function (...text: string[]): string {
-  const result = `${this.c}${text.join("")}\x1b[0m`;
-  this.c = "";
-  return result;
+  if (this.c) {
+    const result = `${this.c}${text.join("")}\x1b[0m`;
+    this.c = "";
+    return result;
+  } else {
+    return text.join();
+  }
 } as Kulay;
 kulay.c = "";
 
