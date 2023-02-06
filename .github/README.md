@@ -1,5 +1,9 @@
 # kulay
 
+[![npm version](https://img.shields.io/npm/v/kulay)](https://www.npmjs.com/package/kulay)
+[![npm downloads](https://img.shields.io/npm/dw/kulay.svg)](https://www.npmjs.com/package/kulay)
+[![CodeFactor](https://www.codefactor.io/repository/github/flzyy/kulay/badge)](https://www.codefactor.io/repository/github/flzyy/kulay)
+
 > Lightweight terminal text styling.
 
 ```ts
