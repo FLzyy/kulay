@@ -1,6 +1,6 @@
 import { describe, it } from "node:test";
 import { equal } from "node:assert/strict";
-import kulay, { apply, Colors, colors } from "../src/index.js";
+import kulay, { Colors, colors } from "../src/index.js";
 
 const text = ["Hello World", "!"];
 
@@ -12,17 +12,6 @@ describe("kulay", () => {
     it(`${key} === \\x1b[${value as number}m${text.join("")}\\x1b[0m`, () => {
       equal(
         kulay[key](...text),
-        `\x1b[${value as number}m${text.join("")}\x1b[0m`
-      );
-    });
-  }
-});
-
-describe("apply", () => {
-  for (const [key, value] of Object.entries(colors)) {
-    it(`${key} === \\x1b[${value as number}m${text.join("")}\\x1b[0m`, () => {
-      equal(
-        apply(text.join(""), key as keyof Colors),
         `\x1b[${value as number}m${text.join("")}\x1b[0m`
       );
     });
