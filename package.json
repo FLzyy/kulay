@@ -1,7 +1,7 @@
 {
-  "name": "npm-package",
+  "name": "kulay",
   "version": "1.0.0",
-  "description": "npm-package description",
+  "description": "Lightweight terminal text styling",
   "main": "index.js",
   "type": "module",
   "types": "index.d.ts",
@@ -18,21 +18,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FLzyy/npm-package.git"
+    "url": "git+https://github.com/FLzyy/kulay.git"
   },
   "keywords": [
-    "key",
-    "w",
-    "o",
-    "r",
-    "d"
+    "chalk",
+    "ansi",
+    "color",
+    "cli",
+    "colors"
   ],
   "author": "FLzyy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FLzyy/npm-package/issues"
+    "url": "https://github.com/FLzyy/kulay/issues"
   },
-  "homepage": "https://github.com/FLzyy/npm-package#readme",
+  "homepage": "https://github.com/FLzyy/kulay#readme",
   "devDependencies": {
     "@swc/cli": "^0.1.59",
     "@swc/core": "^1.3.27",
