@@ -1,6 +1,6 @@
 import { describe, it } from "node:test";
 import { equal } from "node:assert/strict";
-import kulay, { Colors, colors } from "../src/index.js";
+import kulay, { colors } from "../src/index.js";
 
 const text = ["Hello World", "!"];
 
