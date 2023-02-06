@@ -1,3 +1,5 @@
+import { isatty } from "tty";
+
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 const colors = {
   reset: 0,
@@ -49,6 +51,15 @@ const colors = {
   bgWhiteBright: 107,
 };
 
+// https://github.com/alexeyraspopov/picocolors/blob/main/picocolors.js
+const isColorSupported =
+  !("NO_COLOR" in process.env || process.argv.includes("--no-color")) &&
+  ("FORCE_COLOR" in process.env ||
+    process.argv.includes("--color") ||
+    process.platform === "win32" ||
+    (isatty(1) && process.env.TERM !== "dumb") ||
+    "CI" in process.env);
+
 const kulay = function (...text: string[]): string {
   const result = `${kulay.c}${text.join("")}\x1b[0m`;
   kulay.c = "";
@@ -61,7 +72,7 @@ for (const [key, value] of Object.entries(colors)) {
   Object.defineProperty(kulay, key, {
     get() {
       // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
-      this.c += `\x1b[${value}m`;
+      this.c += isColorSupported ? `\x1b[${value}m` : "";
       return this;
     },
   });
@@ -71,4 +82,4 @@ const apply = (text: string, ...styles: Array<keyof typeof colors>): string =>
   `${styles.map((value) => `\x1b[${colors[value]}m`).join("")}${text}\x1b[0m`;
 
 export default kulay;
-export { colors, kulay, apply };
+export { colors, kulay, apply, isColorSupported };
