@@ -1,6 +1,6 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import { isatty } from "tty";
 
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
 const colors = {
   reset: 0,
   bold: 1,
@@ -72,8 +72,8 @@ for (const [key, value] of Object.entries(colors)) {
   Object.defineProperty(kulay, key, {
     get() {
       // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
-      this.c += isColorSupported ? `\x1b[${value}m` : "";
-      return this;
+      kulay.c += isColorSupported ? `\x1b[${value}m` : "";
+      return kulay;
     },
   });
 }
@@ -82,4 +82,4 @@ const apply = (text: string, ...styles: Array<keyof typeof colors>): string =>
   `${styles.map((value) => `\x1b[${colors[value]}m`).join("")}${text}\x1b[0m`;
 
 export default kulay;
-export { colors, kulay, apply, isColorSupported };
+export { kulay, apply, isColorSupported };
