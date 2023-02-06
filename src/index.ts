@@ -177,4 +177,4 @@ const apply = (text: string, ...styles: Array<keyof typeof colors>): string =>
   `${styles.map((value) => `\x1b[${colors[value]}m`).join("")}${text}\x1b[0m`;
 
 export default kulay;
-export { kulay, apply, isColorSupported, Colors, Kulay };
+export { kulay, colors, apply, isColorSupported, Colors, Kulay };
