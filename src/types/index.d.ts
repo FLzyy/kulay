@@ -93,6 +93,5 @@ get bgWhiteBright():this;
 declare const colors:Colors;
 declare const isColorSupported:boolean;
 declare const kulay:Kulay;
-declare const apply:(text:string,...styles:Array<keyof typeof colors>) => string;
 export default kulay;
-export {kulay,apply,colors,isColorSupported,Colors,Kulay };
+export {kulay,colors,isColorSupported,Colors,Kulay };

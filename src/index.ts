@@ -178,8 +178,5 @@ for (const [key, value] of Object.entries(colors)) {
   });
 }
 
-const apply = (text: string, ...styles: Array<keyof typeof colors>): string =>
-  `${styles.map((value) => `\x1b[${colors[value]}m`).join("")}${text}\x1b[0m`;
-
 export default kulay;
-export { kulay, colors, apply, isColorSupported, Colors, Kulay };
+export { kulay, colors, isColorSupported, Colors, Kulay };
