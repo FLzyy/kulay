@@ -156,9 +156,9 @@ const isColorSupported =
     "CI" in process.env);
 
 const kulay = function (...text: string[]): string {
-  if (this.c) {
+  if (kulay.c) {
     const result = `${this.c}${text.join("")}\x1b[0m`;
-    this.c = "";
+    kulay.c = "";
     return result;
   } else {
     return text.join();
