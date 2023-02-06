@@ -61,8 +61,8 @@ const isColorSupported =
     "CI" in process.env);
 
 const kulay = function (...text: string[]): string {
-  const result = `${kulay.c}${text.join("")}\x1b[0m`;
-  kulay.c = "";
+  const result = `${this.c}${text.join("")}\x1b[0m`;
+  this.c = "";
   return result;
 };
 kulay.c = "";
@@ -72,7 +72,7 @@ for (const [key, value] of Object.entries(colors)) {
   Object.defineProperty(kulay, key, {
     get() {
       // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
-      kulay.c += isColorSupported ? `\x1b[${value}m` : "";
+      this.c += isColorSupported ? `\x1b[${value}m` : "";
       return kulay;
     },
   });
