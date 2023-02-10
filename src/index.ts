@@ -155,13 +155,13 @@ const isColorSupported =
     (isatty(1) && process.env.TERM !== "dumb") ||
     "CI" in process.env);
 
-const kulay = function (...text: string[]): string {
+const kulay = function (...text: unknown[]): string {
   if (kulay.c) {
     const result = `${this.c}${text.join("")}\x1b[0m`;
     kulay.c = "";
     return result;
   } else {
-    return text.join();
+    return `${text.join("")}`;
   }
 } as Kulay;
 kulay.c = "";
@@ -179,4 +179,4 @@ for (const [key, value] of Object.entries(colors)) {
 }
 
 export default kulay;
-export { kulay, colors, isColorSupported, Colors, Kulay };
+export { Colors, colors, isColorSupported, Kulay, kulay };
