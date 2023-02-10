@@ -44,7 +44,7 @@ bgCyanBright:number;
 bgWhiteBright:number;
 }
 interface Kulay {
-(...text:string[]):string;
+(...text:unknown[]):string;
 c:string;
 get reset():this;
 get bold():this;
