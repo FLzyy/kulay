@@ -121,7 +121,7 @@ console.log(colors);
 
 ## Benchmarks
 
-```
+```diff
 Benchmark (268435440 string length):
   chalk        x 27.90 ops/sec ±4.57% (49 runs sampled)
 + kulay        x 2,782,473 ops/sec ±2.07% (86 runs sampled)
