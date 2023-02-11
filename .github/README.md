@@ -121,6 +121,8 @@ console.log(colors);
 
 ## Benchmarks
 
+Performance:
+
 ```diff
 Benchmark (268435440 string length):
   chalk        x 27.90 ops/sec ±4.57% (49 runs sampled)
@@ -130,6 +132,38 @@ Benchmark (268435440 string length):
   ansi-colors  x 1.33 ops/sec ±6.11% (8 runs sampled)
   picocolors   x 1.59 ops/sec ±12.56% (8 runs sampled)
   colorette    x 1.57 ops/sec ±13.40% (9 runs sampled)
+```
+
+Package Size (via `sizet-cli@1.0.8`):
+
+```diff
+  chalk@latest:
+    ● Tarred and Gzipped: 13.351kb
+    ● Unpacked: 43.568kb
+
++ kulay@latest:
++   ● Tarred and Gzipped: 1.558kb
++   ● Unpacked: 3.585kb
+
+  kleur@latest:
+    ● Tarred and Gzipped: 6.154kb
+    ● Unpacked: 20.25kb
+
+  colors@latest:
+    ● Tarred and Gzipped: 11.181kb
+    ● Unpacked: 39.506kb
+
+  ansi-colors@latest:
+    ● Tarred and Gzipped: 8.731kb
+    ● Unpacked: 26.143kb
+
+  picocolors@latest:
+    ● Tarred and Gzipped: 2.41kb
+    ● Unpacked: 5.655kb
+
+  colorette@latest:
+    ● Tarred and Gzipped: 5.019kb
+    ● Unpacked: 16.978kb
 ```
 
 With the following hardware:
