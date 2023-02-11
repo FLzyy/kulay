@@ -27,27 +27,27 @@ console.log(`Benchmark (${kulay.bold(str.length)} string length):`);
 const bench = new benchmark.Suite();
 
 bench
-  .add("chalk       ", () =>
+  .add("  chalk       ", () =>
     chalk.blue.bgRed.bold.green.red.yellow.bgCyan.bgYellow(str)
   )
-  .add("kulay       ", () =>
+  .add("+ kulay       ", () =>
     kulay.blue.bgRed.bold.green.red.yellow.bgCyan.bgYellow(str)
   )
-  .add("kleur       ", () =>
+  .add("  kleur       ", () =>
     kleur.blue().bgRed().bold().green().red().yellow().bgCyan().bgYellow(str)
   )
-  .add("colors      ", () =>
+  .add("  colors      ", () =>
     colors.blue.bgRed.bold.green.red.yellow.bgCyan.bgYellow(str)
   )
-  .add("ansi-colors ", () =>
+  .add("  ansi-colors ", () =>
     c.blue.bgRed.bold.green.red.yellow.bgCyan.bgYellow(str)
   )
-  .add("picocolors  ", () =>
+  .add("  picocolors  ", () =>
     pc.bgCyan(
       pc.bgYellow(pc.yellow(pc.red(pc.green(pc.bold(pc.bgRed(pc.blue(str)))))))
     )
   )
-  .add("colorette   ", () =>
+  .add("  colorette   ", () =>
     bgCyan(bgYellow(yellow(red(green(bold(bgRed(blue(str))))))))
   )
   .on("cycle", (/** @type {{ target: benchmark.Target; }} */ e) =>
