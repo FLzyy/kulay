@@ -1,0 +1,14 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "ansi-colors": "*",
+    "chalk": "*",
+    "colorette": "*",
+    "colors": "*",
+    "kleur": "*",
+    "picocolors": "*"
+  },
+  "dependencies": {
+    "benchmark": "^2.1.4"
+  }
+}
