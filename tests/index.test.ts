@@ -9,10 +9,10 @@ describe("kulay", () => {
     equal(kulay(...text), `${text.join("")}`);
   });
   for (const [key, value] of Object.entries(colors)) {
-    it(`${key} === \\x1b[${value as number}m${text.join("")}\\x1b[0m`, () => {
+    it(`${key} === \x1b[${value}m${text.join("")}\x1b[0m`, () => {
       equal(
         kulay[key](...text),
-        `\x1b[${value as number}m${text.join("")}\x1b[0m`,
+        `\x1b[${value}m${text.join("")}\x1b[0m`,
       );
     });
   }
