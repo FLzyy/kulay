@@ -123,13 +123,13 @@ console.log(colors);
 
 ```
 Benchmark (268435440 string length):
-chalk        x 27.90 ops/sec ±4.57% (49 runs sampled)
-kulay        x 2,782,473 ops/sec ±2.07% (86 runs sampled)
-kleur        x 7.12 ops/sec ±2.14% (22 runs sampled)
-colors       x 1.57 ops/sec ±5.67% (8 runs sampled)
-ansi-colors  x 1.33 ops/sec ±6.11% (8 runs sampled)
-picocolors   x 1.59 ops/sec ±12.56% (8 runs sampled)
-colorette    x 1.57 ops/sec ±13.40% (9 runs sampled)
+  chalk        x 27.90 ops/sec ±4.57% (49 runs sampled)
++ kulay        x 2,782,473 ops/sec ±2.07% (86 runs sampled)
+  kleur        x 7.12 ops/sec ±2.14% (22 runs sampled)
+  colors       x 1.57 ops/sec ±5.67% (8 runs sampled)
+  ansi-colors  x 1.33 ops/sec ±6.11% (8 runs sampled)
+  picocolors   x 1.59 ops/sec ±12.56% (8 runs sampled)
+  colorette    x 1.57 ops/sec ±13.40% (9 runs sampled)
 ```
 
 With the following hardware:
