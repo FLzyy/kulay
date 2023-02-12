@@ -18,6 +18,7 @@ import pc from "picocolors";
 import c from "ansi-colors";
 import colors from "colors/safe.js";
 import kulay from "../dist/index.js";
+import { execSync } from "child_process";
 
 const str = "#".repeat(2 ** 28 - 16);
 
@@ -57,3 +58,12 @@ bench
     process.stderr.write(kulay.red(event.target.error.toString()) + "\n");
   })
   .run();
+
+// Included for convenience.
+
+execSync(
+  "npx sizet-cli remote chalk@latest kulay@latest kleur@latest colors@latest ansi-colors@latest picocolors@latest colorette@latest",
+  {
+    stdio: [0, 1, 2],
+  }
+);
