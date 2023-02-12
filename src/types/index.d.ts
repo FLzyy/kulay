@@ -52,7 +52,7 @@ type Kulay =
 (...text: unknown[]): string;
 c: string;
 };
-declare const createKulay:(supportsColor: boolean) => Kulay;
+declare const createKulay:(supportColor?: boolean) => Kulay;
 declare const kulay:Kulay;
 export default kulay;
 export { colors, createKulay, Kulay, kulay, supportsColor };

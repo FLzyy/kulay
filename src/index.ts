@@ -70,7 +70,7 @@ type Kulay =
     c: string;
   };
 
-const createKulay = (supportsColor: boolean): Kulay => {
+const createKulay = (supportColor: boolean = supportsColor): Kulay => {
   const kulay = function (...text: unknown[]): string {
     if (kulay.c) {
       const result = `${kulay.c}${text.join("")}\x1b[0m`;
@@ -87,7 +87,7 @@ const createKulay = (supportsColor: boolean): Kulay => {
     Object.defineProperty(kulay, key, {
       get() {
         // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
-        kulay.c += supportsColor ? `\x1b[${value}m` : "";
+        kulay.c += supportColor ? `\x1b[${value}m` : "";
         return kulay;
       },
     });
@@ -96,7 +96,7 @@ const createKulay = (supportsColor: boolean): Kulay => {
   return kulay;
 };
 
-const kulay = createKulay(supportsColor);
+const kulay = createKulay();
 
 export default kulay;
 export { colors, createKulay, Kulay, kulay, supportsColor };
