@@ -141,8 +141,8 @@ Package Size (via `sizet-cli@1.0.8`):
     ● Unpacked: 43.568kb
 
 + kulay@latest:
-+   ● Tarred and Gzipped: 1.424kb
-+   ● Unpacked: 2.832kb
++   ● Tarred and Gzipped: 1.458kb
++   ● Unpacked: 2.905kb
 
   kleur@latest:
     ● Tarred and Gzipped: 6.154kb
