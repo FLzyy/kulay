@@ -83,7 +83,6 @@ console.log(colors);
 - `inverse` - Invert background and foreground colors.
 - `hidden` - Print the text but make it invisible.
 - `strikethrough` - Puts a horizontal line through the center of the text. (Not widely supported)
-- `visible` - Print the text only when Chalk has a color level above zero. Can be useful for things that are purely cosmetic.
 
 - `black`
 - `red`
