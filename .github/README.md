@@ -181,3 +181,4 @@ With the following hardware:
 - Processor: _AMD Ryzen 5 3400G with Radeon Vega Graphics_
 - Total Physical Memory: _14,246 MB_
 - Windows version: _Windows 11 Pro 22H2_
+- Node.Js Version: v19.6.0
