@@ -3,10 +3,13 @@ declare const colors:{
 reset:number;
 bold:number;
 dim:number;
-underscore:number;
+italic:number;
+underline:number;
+overline:number;
 blink:number;
 reverse:number;
 hidden:number;
+strikethrough:number;
 black:number;
 red:number;
 green:number;
