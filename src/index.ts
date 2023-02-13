@@ -96,7 +96,5 @@ const createKulay = (supportColor: boolean = supportsColor): Kulay => {
   return kulay;
 };
 
-const kulay = createKulay();
-
-export default kulay;
-export { colors, createKulay, Kulay, kulay, supportsColor };
+export default createKulay();
+export { colors, createKulay, Kulay, supportsColor };
