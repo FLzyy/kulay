@@ -53,6 +53,6 @@ type Kulay =
 c: string;
 };
 declare const createKulay:(supportColor?: boolean) => Kulay;
-declare const kulay:Kulay;
-export default kulay;
-export { colors, createKulay, Kulay, kulay, supportsColor };
+declare const _default: Kulay;
+export default _default;
+export { colors, createKulay, Kulay, supportsColor };
