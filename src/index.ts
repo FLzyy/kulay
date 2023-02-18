@@ -68,28 +68,25 @@ type Kulay =
   & {
     [key in keyof typeof colors]: Kulay;
   }
-  & {
-    (...text: unknown[]): string;
-    c: string;
-  };
+  & ((...text: unknown[]) => string);
 
 const createKulay = (supportColor: boolean = supportsColor): Kulay => {
+  let c = "";
   const kulay = function (...text: unknown[]): string {
-    if (kulay.c && supportColor) {
-      const result = `${kulay.c}${text.join("")}\x1b[0m`;
-      kulay.c = "";
+    if (c && supportColor) {
+      const result = `${c}${text.join("")}\x1b[0m`;
+      c = "";
       return result;
     } else {
       return `${text.join("")}`;
     }
   } as Kulay;
-  kulay.c = "";
 
   // https://stackoverflow.com/questions/68387483/how-does-nodejs-module-chalks-chaining-syntax-work
   for (const [key, value] of Object.entries(colors)) {
     Object.defineProperty(kulay, key, {
       get() {
-        kulay.c += `\x1b[${value}m`;
+        c += `\x1b[${value}m`;
         return kulay;
       },
     });
