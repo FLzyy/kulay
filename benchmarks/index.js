@@ -18,10 +18,8 @@ import pc from "picocolors";
 import c from "ansi-colors";
 import colors from "colors/safe.js";
 import kulay from "../dist/index.js";
-import { execSync } from "child_process";
 
 const str = "foobar";
-const longstr = "#".repeat(2 ** 28 - 16);
 
 const bench = (name) => {
   console.log(`\n${name}:`);
@@ -63,47 +61,3 @@ bench("Simple")
     bgCyan(bgYellow(yellow(red(green(bold(bgRed(blue(str))))))))
   )
   .run();
-
-bench(`Long String (${longstr.length})`)
-  .add("  chalk       ", () =>
-    chalk.blue.bgRed.bold.green.red.yellow.bgCyan.bgYellow(longstr)
-  )
-  .add("+ kulay       ", () =>
-    kulay.blue.bgRed.bold.green.red.yellow.bgCyan.bgYellow(longstr)
-  )
-  .add("  kleur       ", () =>
-    kleur
-      .blue()
-      .bgRed()
-      .bold()
-      .green()
-      .red()
-      .yellow()
-      .bgCyan()
-      .bgYellow(longstr)
-  )
-  .add("  colors      ", () =>
-    colors.blue.bgRed.bold.green.red.yellow.bgCyan.bgYellow(longstr)
-  )
-  .add("  ansi-colors ", () =>
-    c.blue.bgRed.bold.green.red.yellow.bgCyan.bgYellow(longstr)
-  )
-  .add("  picocolors  ", () =>
-    pc.bgCyan(
-      pc.bgYellow(
-        pc.yellow(pc.red(pc.green(pc.bold(pc.bgRed(pc.blue(longstr))))))
-      )
-    )
-  )
-  .add("  colorette   ", () =>
-    bgCyan(bgYellow(yellow(red(green(bold(bgRed(blue(longstr))))))))
-  )
-  .run();
-// Included for convenience.
-
-execSync(
-  "npx sizet-cli remote chalk@latest kulay@latest kleur@latest colors@latest ansi-colors@latest picocolors@latest colorette@latest",
-  {
-    stdio: [0, 1, 2],
-  }
-);

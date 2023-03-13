@@ -120,28 +120,14 @@ console.log(colors);
 
 ## Benchmarks
 
-Simple:
-
 ```diff
-  chalk        x 4,147,286 ops/sec ±1.95% (85 runs sampled)
-+ kulay        x 3,251,276 ops/sec ±1.13% (91 runs sampled)
-  kleur        x 1,101,796 ops/sec ±1.96% (89 runs sampled)
-  colors       x 176,744 ops/sec ±1.90% (91 runs sampled)
-  ansi-colors  x 161,759 ops/sec ±0.62% (94 runs sampled)
-  picocolors   x 774,232 ops/sec ±0.61% (94 runs sampled)
-  colorette    x 755,651 ops/sec ±0.92% (91 runs sampled)
-```
-
-Long String (268435440):
-
-```diff
-  chalk        x 34.96 ops/sec ±2.92% (61 runs sampled)
-+ kulay        x 3,217,027 ops/sec ±2.20% (86 runs sampled)
-  kleur        x 8.70 ops/sec ±4.02% (26 runs sampled)
-  colors       x 1.52 ops/sec ±16.64% (9 runs sampled)
-  ansi-colors  x 1.58 ops/sec ±16.62% (9 runs sampled)
-  picocolors   x 1.85 ops/sec ±8.15% (9 runs sampled)
-  colorette    x 2.00 ops/sec ±5.26% (9 runs sampled)
+  chalk        x 3,780,136 ops/sec ±3.50% (82 runs sampled)
++ kulay        x 3,389,733 ops/sec ±1.56% (90 runs sampled)
+  kleur        x 1,167,627 ops/sec ±1.88% (89 runs sampled)
+  colors       x 171,769 ops/sec ±0.98% (89 runs sampled)
+  ansi-colors  x 150,801 ops/sec ±0.83% (92 runs sampled)
+  picocolors   x 767,857 ops/sec ±1.43% (91 runs sampled)
+  colorette    x 748,039 ops/sec ±1.67% (90 runs sampled)
 ```
 
 Package Size (via `sizet-cli@1.0.8`):
