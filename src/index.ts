@@ -64,11 +64,9 @@ const colors = {
   bgWhiteBright: 107,
 };
 
-type Kulay =
-  & {
-    [key in keyof typeof colors]: Kulay;
-  }
-  & ((...text: unknown[]) => string);
+type Kulay = {
+  [key in keyof typeof colors]: Kulay;
+} & ((...text: unknown[]) => string);
 
 const createKulay = (supportColor: boolean = supportsColor): Kulay => {
   let c = "";
